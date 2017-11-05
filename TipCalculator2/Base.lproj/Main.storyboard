@@ -29,8 +29,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Amount:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wfG-So-oHC">
-                                <rect key="frame" x="8" y="321" width="90" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Amount / Per Person:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wfG-So-oHC">
+                                <rect key="frame" x="8" y="321" width="172" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -43,7 +43,7 @@
                                     <segment title="25%"/>
                                 </segments>
                                 <connections>
-                                    <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="valueChanged" id="DRl-hr-Vm2"/>
+                                    <action selector="tipPercentageChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="jaJ-to-9id"/>
                                 </connections>
                             </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a8g-sx-7P0" userLabel="Tip People Border">
@@ -99,12 +99,19 @@
                                     <constraint firstAttribute="height" constant="1" id="eHv-xr-S14"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rn2-S0-sjY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00 / $0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rn2-S0-sjY">
                                 <rect key="frame" x="64" y="346" width="247" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z4U-fD-nwS">
+                                <rect key="frame" x="8" y="383" width="359" height="1"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="zgN-t7-ztv"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <accessibility key="accessibilityConfiguration" label="$0.00">
@@ -114,6 +121,7 @@
                         <constraints>
                             <constraint firstItem="TbB-JI-fm7" firstAttribute="top" secondItem="ewW-Tt-nlt" secondAttribute="top" constant="8" id="0Qa-9O-XAx"/>
                             <constraint firstItem="CAV-aL-Aez" firstAttribute="top" secondItem="CnN-LX-Lbe" secondAttribute="bottom" constant="8" id="1hB-Ea-haZ"/>
+                            <constraint firstItem="Z4U-fD-nwS" firstAttribute="top" secondItem="rn2-S0-sjY" secondAttribute="bottom" constant="8" id="2Iv-Ll-8hq"/>
                             <constraint firstItem="TbB-JI-fm7" firstAttribute="leading" secondItem="ewW-Tt-nlt" secondAttribute="leading" constant="8" id="3tY-fS-B1Y"/>
                             <constraint firstItem="a8g-sx-7P0" firstAttribute="leading" secondItem="ewW-Tt-nlt" secondAttribute="leading" constant="8" id="BTz-5y-HOz"/>
                             <constraint firstItem="wfG-So-oHC" firstAttribute="top" secondItem="8m8-7o-hOP" secondAttribute="bottom" constant="8" id="CSm-R2-gMV"/>
@@ -137,9 +145,11 @@
                             <constraint firstItem="wfG-So-oHC" firstAttribute="leading" secondItem="ewW-Tt-nlt" secondAttribute="leading" constant="8" id="ZSh-gU-PjV"/>
                             <constraint firstItem="a8g-sx-7P0" firstAttribute="top" secondItem="CAV-aL-Aez" secondAttribute="bottom" constant="8" id="fLw-l5-I0v"/>
                             <constraint firstItem="ewW-Tt-nlt" firstAttribute="trailing" secondItem="7RV-fB-jHH" secondAttribute="trailing" constant="8" id="gy2-C3-dVH"/>
+                            <constraint firstItem="ewW-Tt-nlt" firstAttribute="trailing" secondItem="Z4U-fD-nwS" secondAttribute="trailing" constant="8" id="iDN-1B-dwr"/>
                             <constraint firstItem="CAV-aL-Aez" firstAttribute="leading" secondItem="ewW-Tt-nlt" secondAttribute="leading" constant="64" id="jdg-m9-TqR"/>
                             <constraint firstItem="HKA-mP-Ldz" firstAttribute="leading" secondItem="ewW-Tt-nlt" secondAttribute="leading" constant="8" id="ner-JN-W3E"/>
                             <constraint firstItem="cm1-0d-1lC" firstAttribute="top" secondItem="HKA-mP-Ldz" secondAttribute="bottom" constant="8" id="ojg-Ea-7Tx"/>
+                            <constraint firstItem="Z4U-fD-nwS" firstAttribute="leading" secondItem="ewW-Tt-nlt" secondAttribute="leading" constant="8" id="pNw-wi-TP7"/>
                             <constraint firstItem="dOZ-dE-co1" firstAttribute="leading" secondItem="ewW-Tt-nlt" secondAttribute="leading" constant="64" id="qaI-l9-DTd"/>
                             <constraint firstItem="rn2-S0-sjY" firstAttribute="top" secondItem="wfG-So-oHC" secondAttribute="bottom" constant="8" id="ufI-qd-3rV"/>
                             <constraint firstItem="cm1-0d-1lC" firstAttribute="leading" secondItem="ewW-Tt-nlt" secondAttribute="leading" constant="64" id="wZS-MC-qAI"/>
@@ -182,55 +192,87 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JJy-ii-WSm">
-                                <rect key="frame" x="34" y="294" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8K2-wp-57q">
-                                <rect key="frame" x="151" y="294" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cDN-g5-3Nx">
-                                <rect key="frame" x="262" y="294" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set Default Tip Percentages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPX-wp-z0E">
-                                <rect key="frame" x="47" y="96" width="281" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Default Tip Percentages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPX-wp-z0E">
+                                <rect key="frame" x="80.5" y="96" width="214" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tDJ-6e-SYb">
-                                <rect key="frame" x="72" y="408" width="201" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Enable Rounded Tip"/>
-                            </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PJW-xu-Yos">
-                                <rect key="frame" x="47" y="235" width="281" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PJW-xu-Yos">
+                                <rect key="frame" x="32" y="148.5" width="311" height="29"/>
                                 <segments>
                                     <segment title="First"/>
                                     <segment title="Second"/>
                                     <segment title=""/>
                                 </segments>
+                                <connections>
+                                    <action selector="setDefaultTip:" destination="qx2-Uf-8gl" eventType="valueChanged" id="rYN-gS-YFV"/>
+                                </connections>
                             </segmentedControl>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9B1-AY-7zL">
+                                <rect key="frame" x="32" y="208.5" width="311" height="17"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JJy-ii-WSm">
+                                        <rect key="frame" x="0.0" y="0.0" width="98.5" height="17"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                        <connections>
+                                            <action selector="changeCustomTip1:" destination="qx2-Uf-8gl" eventType="editingChanged" id="RW5-Hw-T09"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8K2-wp-57q">
+                                        <rect key="frame" x="106.5" y="0.0" width="98" height="17"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                        <connections>
+                                            <action selector="changeCustomTip2:" destination="qx2-Uf-8gl" eventType="editingChanged" id="9Ot-FB-r1l"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cDN-g5-3Nx">
+                                        <rect key="frame" x="212.5" y="0.0" width="98.5" height="17"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                        <connections>
+                                            <action selector="changeCustomTip3:" destination="qx2-Uf-8gl" eventType="editingChanged" id="EyY-rj-efU"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="PJW-xu-Yos" firstAttribute="top" secondItem="mPX-wp-z0E" secondAttribute="bottom" constant="32" id="3ff-yd-CkJ"/>
+                            <constraint firstItem="9B1-AY-7zL" firstAttribute="leading" secondItem="0y0-Rn-Pa0" secondAttribute="leading" constant="32" id="D2I-mT-1hJ"/>
+                            <constraint firstItem="0y0-Rn-Pa0" firstAttribute="trailing" secondItem="PJW-xu-Yos" secondAttribute="trailing" constant="32" id="XS1-g9-hIN"/>
+                            <constraint firstItem="9B1-AY-7zL" firstAttribute="top" secondItem="PJW-xu-Yos" secondAttribute="bottom" constant="32" id="XSu-ep-jRk"/>
+                            <constraint firstItem="mPX-wp-z0E" firstAttribute="centerX" secondItem="SSd-oa-EyZ" secondAttribute="centerX" id="Zwh-Rp-DzO"/>
+                            <constraint firstItem="0y0-Rn-Pa0" firstAttribute="trailing" secondItem="9B1-AY-7zL" secondAttribute="trailing" constant="32" id="hHR-ki-sMf"/>
+                            <constraint firstItem="mPX-wp-z0E" firstAttribute="top" secondItem="0y0-Rn-Pa0" secondAttribute="top" constant="32" id="tFa-uG-Ugl"/>
+                            <constraint firstItem="PJW-xu-Yos" firstAttribute="leading" secondItem="0y0-Rn-Pa0" secondAttribute="leading" constant="32" id="xtU-To-gvk"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="0y0-Rn-Pa0"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="SMg-Gy-1SC" appends="YES" id="Od9-V4-zdm"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="hLv-eN-XIe"/>
+                    <connections>
+                        <outlet property="firstTipField" destination="JJy-ii-WSm" id="TyV-QS-Nn1"/>
+                        <outlet property="secondTipField" destination="8K2-wp-57q" id="6n7-k2-03G"/>
+                        <outlet property="settingsTipControl" destination="PJW-xu-Yos" id="KiX-EV-01z"/>
+                        <outlet property="thirdTipField" destination="cDN-g5-3Nx" id="O80-oR-AnP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ybB-lt-FXL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="SMg-Gy-1SC">
+                    <connections>
+                        <action selector="onTap:" destination="qx2-Uf-8gl" id="Lxr-cM-98Z"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1703.2" y="131.78410794602701"/>
         </scene>
